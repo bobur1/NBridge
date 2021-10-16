@@ -1,0 +1,44 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Неизвестный </title></head><body>
+<h1 id="bridge">Bridge</h1>
+<h2 id="rinkeby-contract-addresses">Rinkeby contract addresses</h2>
+<p>CustomToken deployed with address: <code>0x7251E03Aa8930F6ad583Dca643B27d6eaBffa740</code></p>
+<p>Bridge Proxy deployed with address: <code>0xaED51642D70409eD041Efd61c131b396Be2155F4</code></p>
+<p>~~Bridge implementation deployed with address: <code>0x39DcFb81B1f054DCAD192542Daa2375862C1C3b8</code>~~</p>
+<p>BridgeV2 implementation deployed with address: <code>0x6E9CBBd8A876dFA700Da3a4f9961e6A1b87CE1CC</code></p>
+<h2 id="ropsten-contract-addresses">Ropsten contract addresses</h2>
+<p>CustomToken deployed with address: <code>0x558cAF0bD193D0a34233107da226F6E31BCc7215</code></p>
+<p>Bridge Proxy deployed with address: <code>0xA3647687badF17BAF2868D75FA63fF25b0d99C5E</code></p>
+<p>Bridge implementation deployed with address: <code>0x6623830c2CbecF86FE65b6C25089d5cb5004dc66</code></p>
+<h2 id="using-this-project">Using this Project</h2>
+<p>Clone this repository, then install the dependencies with <code>npm install</code>, then compile contracts with <code>npm run compile</code>.</p>
+<h3 id="run-contract-tests-get-callstacks">Run Contract Tests &amp; Get Callstacks</h3>
+<p><code>npm run test</code></p>
+<h3 id="run-coverage-report-for-tests">Run Coverage Report for Tests</h3>
+<p><code>npm run coverage</code></p>
+<h3 id="run-docgen">Run docgen</h3>
+<p><code>npm run doc</code> or <code>npx hardhat docgen</code></p>
+<p>The document will be created in the docs folder.</p>
+<p>Check about <a href="https://docs.soliditylang.org/en/v0.5.10/natspec-format.html">NatSpec</a> to know how to describe your contract to docgen.</p>
+<h3 id="deploy-example">Deploy example</h3>
+<p>Script to deploy CustomToken in rinkeby.</p>
+<p><em>create .env before.</em></p>
+<p><code>npx hardhat run --network rinkeby scripts/deployCustomToken.ts</code></p>
+<h3 id="task-example">Task example</h3>
+<h2 id="swap-task-rinkeby-example">Swap task (rinkeby example)</h2>
+<p>USER_ADDRESS - recipient user address
+NONCE_NUMBER - unique number, should be the same for pair swap and redeem functions</p>
+<p><code>npx hardhat swap --network rinkeby --token "0x2bC608E761CDfF3D41608505CD6dB6C55bF39472" --user USER_ADDRESS --bridge "0xa55A6c327dd43D4bd5a581c4B25503998A0e53fA" --amount "10000" --chainid "3" --nonce NONCE_NUMBER</code></p>
+<h2 id="redeem-task-ropsten-example">Redeem task (ropsten example)</h2>
+<p><code>npx hardhat redeem --network ropsten --token "0x6Cb348582A964bDF305C70554383b90490EE61dB" --user USER_ADRESS --bridge "0x62416580273F793A82A30b84Be8A8B1044fc29fA" --amount "10000" --chainid "4" --nonce NONCE_NUMBER</code></p>
+<h3 id="using-mocha-test-explorer-in-visual-studio-code">Using Mocha Test Explorer in Visual Studio Code</h3>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-mocha-test-adapter">Mocha Test Explorer</a>
+As we are using typescript tests, we nee to add following attribute in <em>settings.json</em> file (Visual Studio Code global settings):
+<code>"mochaExplorer.files": "test/**/*.{j,t}s",</code></p>
+<p>If you see "Mocha: Error" in test explorer, ensure that <code>npx hardhat test</code> works.</p>
+<h3 id="verification-example">Verification example</h3>
+<p><code>npx hardhat verify --network rinkeby CONTRACT_ADDRESS ARG1 ARG2</code></p>
+<p>To verify upgradable contract - you need use address of implementation as <code>CONTRACT_ADDRESS</code></p>
+<p>Btw you can verify your contract with deploy. You can find example how do it in deploy scripts.</p>
+<h3 id="openzeppelin-wizard">OpenZeppelin Wizard</h3>
+<p><a href="https://docs.openzeppelin.com/contracts/4.x/wizard">Wizard</a> is a useful generator of smart contracts.</p>
+</body></html>
